@@ -13,10 +13,10 @@
  * @package           Mptc_Fields
  *
  * @wordpress-plugin
- * Plugin Name:       PTC Custom Field
+ * Plugin Name:       PTC Custom Field Shortcode & Widgets
  * Plugin URI:        https://www.mptc.gov.kh/
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Chann Chetra
  * Author URI:        https://channchetra.com
  * License:           GPL-2.0+
@@ -67,6 +67,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-mptc-fields.php';
  * Loading CMB2 file
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2/init.php';
+/**
+ * Loading Shortcode files
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 
 /**
  * Begins execution of the plugin.
