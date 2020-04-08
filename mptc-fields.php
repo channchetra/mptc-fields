@@ -73,6 +73,11 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2/init.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 
 /**
+ * Loading Shortcode files
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/widget.php';
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,
