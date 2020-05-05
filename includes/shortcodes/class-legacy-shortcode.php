@@ -53,4 +53,5 @@ function ptc_legacy_gallery_shortcode( $atts ) {
     return ob_get_clean();
 
 }
+
 add_shortcode( 'ptc-legacy-gallery', 'ptc_legacy_gallery_shortcode' );

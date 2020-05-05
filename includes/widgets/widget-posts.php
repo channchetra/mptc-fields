@@ -74,7 +74,7 @@ class MPTC_Category_Posts extends WP_Widget
             
             echo $args['before_widget'];
             if ( $title ) {
-                echo $args['before_title'] . '<span class="primary-color">' . $title . '</span>' . $args['after_title'];
+                echo $args['before_title'] . $title . $args['after_title'];
             }
 			echo '<ul class="b-2">';
             while( $q->have_posts() ) {
@@ -84,12 +84,12 @@ class MPTC_Category_Posts extends WP_Widget
 						<div class="b-item">
 							<div class="b-title-wrap">
 								<div class="b-title margin-bottom-15"><a href="<?php the_permalink() ?>">
-									<?php the_title(); ?>
+									<?php the_title(); ?></a>
 								</div>
 								<div class="b-cat">
-                                    <span class="hot">HOT!</span>
-                                    <span><?php the_date() ?></span>
-                                    <span><?php ?></span>
+                                    <!-- <span class="hot">HOT!</span> -->
+                                    <?php mptc_posted_on(); ?>
+                                    <?php mptc_posted_by(); ?>
                                 </div>
 							</div>
 						</div>

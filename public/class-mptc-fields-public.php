@@ -101,3 +101,84 @@ class Mptc_Fields_Public {
 	}
 
 }
+if(!function_exists('mptc_posted_by')){
+	function mptc_posted_by()
+	{
+		$html = '<span>%s <a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '" class="fn">' . esc_html(get_the_author()) . '</a></span>';
+		printf($html, __('អត្ថបទដោយ', 'sage'));
+	}
+}
+if(!function_exists('mptc_posted_on')){
+	function mptc_posted_on()
+		{
+
+			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+			if (get_the_time('U') !== get_the_modified_time('U')) {
+				$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+			}
+
+			$time_string = sprintf(
+				$time_string,
+				esc_attr(get_the_date(DATE_W3C)),
+				esc_html(get_the_date())
+			);
+
+			$posted_on = sprintf(
+				/* translators: %s: post date. */
+				esc_html_x('%s', 'post date', 'sage'),
+				$time_string
+			);
+
+			echo '<span>' . $posted_on . '</span>'; // WPCS: XSS OK.
+		}
+}
+if( !function_exists( 'ptc_get_the_post_thumbnail' ) ) {
+	function ptc_get_the_post_thumbnail( $size = 'post-thumbnail' ) {
+		if( has_post_thumbnail() ) {
+			$url = get_the_post_thumbnail_url( '', $size );
+		}else{
+			$url = plugin_dir_url( __FILE__ ) .'img/'.$size.'.png';
+		}
+		return $url;
+	}
+}
+if(!function_exists( 'ptc_the_block_title' )){
+	function ptc_the_block_title( $arr ){
+		$link = '<div class="block-title2 primary-color">'.$arr['title'].'</div>';
+		if ( isset( $arr['cat_id'] ) && $arr['cat_id'] != '' ) {
+			// Get the URL of this category
+			$category_link = get_category_link( $arr['cat_id'] );
+		}	
+		if ( isset( $category_link ) && $category_link != '' ) {
+			$link = '<a class="primary-color" href="'. esc_url( $category_link ) .'">'.$arr['title'].'</a>';
+		}
+		if ( isset( $arr['taxonomy'] ) && $arr['taxonomy'] != '' ) {
+			$href = get_term_link( $arr['type_slug'], $arr['taxonomy'] );
+			if ( !is_wp_error( $href ) )
+			$link = '<a class="primary-color" href="'. esc_url( $href ) .'">'.esc_html( $arr['title'] ).'</a>';
+		}
+		if( isset( $arr['link'] ) ) {
+			$link = '<a class="primary-color" href="'. $arr['link'] .'">'.$arr['title'].'</a>';
+		}
+		if ( isset( $arr['cat_id'] ) && $arr['cat_id'] == '' ) {
+			$link = '<a class="primary-color" href="#">'.$arr['title'].'</a>';
+		}
+		$html = '<div class="block-title2 primary-color">%s</div>';
+		printf( $html, $link );
+	}
+}
+if(!function_exists( 'count_cat_post' )){
+	function count_cat_post($category) {
+		if(is_string($category)) {
+			$get_cat = get_term_by('slug', $category, 'category');
+			$catID = $get_cat->term_id;
+		}
+		elseif(is_numeric($category)) {
+			$catID = $category;
+		} else {
+			return 0;
+		}
+		$cat = get_term_by('id', $catID, 'category');
+		return $cat->count;
+	}
+}
