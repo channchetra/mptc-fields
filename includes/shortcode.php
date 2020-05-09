@@ -18,4 +18,5 @@
  * Includes Legacy Gallery shortcode
  */
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcodes/class-legacy-shortcode.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcodes/class-legacy-shortcode-two.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcodes/class-collapse-sidebar.php';
