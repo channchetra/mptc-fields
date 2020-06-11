@@ -4,15 +4,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PTC Custom Field Shortcode & Widgets 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mptc-fields\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-05-18T09:22:01+02:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.2.0\n"
+"PO-Revision-Date: 2020-05-18 14:24+0700\n"
+"X-Generator: Poedit 2.2\n"
 "X-Domain: mptc-fields\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
 
 #. Plugin Name of the plugin
 msgid "PTC Custom Field Shortcode & Widgets"
@@ -23,7 +25,9 @@ msgid "https://www.mptc.gov.kh/"
 msgstr ""
 
 #. Description of the plugin
-msgid "This is a short description of what the plugin does. It's displayed in the WordPress admin area."
+msgid ""
+"This is a short description of what the plugin does. It's displayed in the "
+"WordPress admin area."
 msgstr ""
 
 #. Author of the plugin
@@ -36,7 +40,7 @@ msgstr ""
 
 #: public/class-mptc-fields-public.php:108
 msgid "អត្ថបទដោយ"
-msgstr ""
+msgstr "Posted by"
 
 #. translators: %s: post date.
 #: public/class-mptc-fields-public.php:128

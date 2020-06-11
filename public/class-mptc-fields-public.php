@@ -105,7 +105,7 @@ if(!function_exists('mptc_posted_by')){
 	function mptc_posted_by()
 	{
 		$html = '<span>%s <a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '" class="fn">' . esc_html(get_the_author()) . '</a></span>';
-		printf($html, __('អត្ថបទដោយ', 'sage'));
+		printf($html, __('អត្ថបទដោយ', 'mptc-fields'));
 	}
 }
 if(!function_exists('mptc_posted_on')){
@@ -125,7 +125,7 @@ if(!function_exists('mptc_posted_on')){
 
 			$posted_on = sprintf(
 				/* translators: %s: post date. */
-				esc_html_x('%s', 'post date', 'sage'),
+				esc_html_x('%s', 'post date', 'mptc-fields'),
 				$time_string
 			);
 

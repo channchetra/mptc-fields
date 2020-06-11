@@ -35,6 +35,7 @@ function cmb2_add_mptc_fields() {
 		'object_types' => array( 'page', 'post' ),
 		'context'      => 'normal',
 		'priority'     => 'default',
+		'show_in_rest' => WP_REST_Server::READABLE,
     ) );
     
 	$cmb->add_field( array(
